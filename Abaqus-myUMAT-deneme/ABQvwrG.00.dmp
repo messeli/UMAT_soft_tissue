@@ -1,0 +1,239 @@
+<Description>
+    ABQvwrG.exe / rank 0 / thread 0  encounted an  in KERNELBASE.dll
+</Description>
+
+<Callstack>
+KERNELBASE.dll                 RaiseException                
+MSVCR110.dll                   CxxThrowException             
+ABQSMAInbVwrIPC.dll            ipc_Socket::Send              
+ABQSMAInbVwrIPC.dll            ipc_OsokStreamDevice::flush   
+ABQSMAInbVwrIPC.dll            ipc_Que::RemoteSend           
+ABQSMAInbVwrIPC.dll            ipc_Client::SendDirective     
+ABQSMAIngVwrSesGui.dll         qryG_KerClntBase::QryUnRegisterPath
+ABQSMAIngVwrSesGui.dll         qryG_QueryRegistrarRole::UnRegister
+ABQSMAIngVwrSesGui.dll         qryG_Proxy::UnRegister        
+ABQSMAVagVwrModGui.dll         visG_AnimationToolsetGui::~visG_AnimationToolsetGui
+ABQSMAVagVwrModGui.dll         visG_AnimationToolsetGui::~visG_AnimationToolsetGui
+ABQSMAVagVwrModGui.dll         omi_SingletonBase<visG_AnimationToolsetGui>::Finalize
+ABQSMAVagVwrModGui.dll         SMAVagVisG_finalize           
+ABQSMAVagVwrModGui.dll         SMAVagVwrModGui_finalize      
+MSVCR110.dll                   initterm_e                    
+MSVCR110.dll                   exit                          
+ntdll.dll                      RtlActivateActivationContextUnsafeFast
+ntdll.dll                      LdrShutdownProcess            
+ntdll.dll                      RtlExitUserProcess            
+KERNEL32.DLL                   FatalExit                     
+libifcoremd.dll                for_lt_eq                     
+libifcoremd.dll                for_exit                      
+libifcoremd.dll                for_rtl_finish_               
+KERNELBASE.dll                 CtrlRoutine                   
+KERNEL32.DLL                   BaseThreadInitThunk           
+ntdll.dll                      RtlUserThreadStart            
+</Callstack>
+
+<Modules>
+23DE0000 - 23DEB000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQvwrG.exe
+51950000 - 51B46000  C:\Windows\SYSTEM32\ntdll.dll
+4FF00000 - 4FFBD000  C:\Windows\System32\KERNEL32.DLL
+4F430000 - 4F6F9000  C:\Windows\System32\KERNELBASE.dll
+FCAD0000 - FD131000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAVagVwrModGui.dll
+FC6F0000 - FCAC6000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAIngVwrGui.dll
+FB420000 - FB586000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAIngFoxAbq.dll
+FB3B0000 - FB41D000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAIngVwrSesGui.dll
+4FC40000 - 4FC6A000  C:\Windows\System32\GDI32.dll
+4F090000 - 4F0B2000  C:\Windows\System32\win32u.dll
+4A820000 - 4A82D000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAInbVwrMduCom.dll
+50BE0000 - 50C4B000  C:\Windows\System32\WS2_32.dll
+4F2A0000 - 4F3AB000  C:\Windows\System32\gdi32full.dll
+4F9B0000 - 4FADB000  C:\Windows\System32\RPCRT4.dll
+4F860000 - 4F8FD000  C:\Windows\System32\msvcp_win.dll
+4F0C0000 - 4F1C0000  C:\Windows\System32\ucrtbase.dll
+509E0000 - 50B80000  C:\Windows\System32\USER32.dll
+40990000 - 409B0000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAInbVwrIPC.dll
+40940000 - 4095C000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAInbVwrPyUtils.dll
+49E60000 - 49E67000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAPybIniModule.dll
+27110000 - 274D5000  C:\SIMULIA\CAE\2017\win_b64\code\bin\python27.dll
+205A0000 - 207DA000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAAbuGeom.dll
+2AE70000 - 2AFBF000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAAbuBasicUtils.dll
+500E0000 - 50823000  C:\Windows\System32\SHELL32.dll
+510E0000 - 5118C000  C:\Windows\System32\ADVAPI32.dll
+511A0000 - 5123E000  C:\Windows\System32\msvcrt.dll
+4FE80000 - 4FE88000  C:\Windows\System32\PSAPI.DLL
+1EDB0000 - 1F045000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMABasShared.dll
+513A0000 - 5143C000  C:\Windows\System32\sechost.dll
+3AE40000 - 3AE6F000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMABasAlloc.dll
+396F0000 - 3972A000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMABasCoreUtils.dll
+35DD0000 - 35EA4000  C:\Windows\SYSTEM32\MSVCR110.dll
+20300000 - 203B5000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAInbVwrSesCom.dll
+1FBF0000 - 1FD1F000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAInbVwrFontServer.dll
+40A10000 - 40A27000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAInbCaePrefs.dll
+3F090000 - 3F0C8000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAInbFoxAbqCom.dll
+40840000 - 408BE000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAPybPyoModule.dll
+203C0000 - 2059A000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAFoxFoxAPI.dll
+51370000 - 513A0000  C:\Windows\System32\IMM32.dll
+474F0000 - 4757E000  C:\Windows\SYSTEM32\WINSPOOL.DRV
+301C0000 - 30225000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAInbVwrCom.dll
+26DB0000 - 27107000  C:\SIMULIA\CAE\2017\win_b64\code\bin\libmmd.dll
+334A0000 - 33501000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAInbVwrCmd.dll
+1FD20000 - 2008E000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAOdbApi.dll
+0CDF0000 - 0D6F0000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAOdbCore.dll
+20090000 - 201DD000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMARfmInterface.dll
+47970000 - 47997000  C:\Windows\SYSTEM32\WINMM.dll
+210B0000 - 2126E000  C:\SIMULIA\CAE\2017\win_b64\code\bin\libifcoremd.dll
+4FDB0000 - 4FDCD000  C:\Windows\System32\imagehlp.dll
+3AE20000 - 3AE39000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAUzlZlib.dll
+39610000 - 39645000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMABasGenericsLib.dll
+1E9C0000 - 1EDA3000  C:\SIMULIA\CAE\2017\win_b64\code\bin\JS0GROUP.dll
+33E60000 - 33F07000  C:\Windows\SYSTEM32\MSVCP110.dll
+51240000 - 5136A000  C:\Windows\System32\ole32.dll
+50D80000 - 510D6000  C:\Windows\System32\combase.dll
+50CB0000 - 50D7D000  C:\Windows\System32\OLEAUT32.dll
+2BE50000 - 2BF7C000  C:\SIMULIA\CAE\2017\win_b64\code\bin\CATSysTS.dll
+51440000 - 51495000  C:\Windows\System32\SHLWAPI.dll
+40350000 - 40357000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMABasPrfTrkLib.dll
+479E0000 - 47A90000  C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.19041.488_none_4238de57f6b64d28\COMCTL32.dll
+29630000 - 29691000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMARasRaster.dll
+06390000 - 07337000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAOdbAttrEO.dll
+1FB00000 - 1FBF0000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAOdbCoreGeom.dll
+0C950000 - 0CA10000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAShpCore.dll
+1E510000 - 1E680000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMARomDiagEx.dll
+40820000 - 40838000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAAspDiagExtractor.dll
+05DA0000 - 06383000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAAspSupport.dll
+35FF0000 - 3602B000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAEliLicenseModule.dll
+39800000 - 39809000  C:\Windows\SYSTEM32\WSOCK32.dll
+3C7A0000 - 3C7B8000  C:\Windows\SYSTEM32\NETAPI32.dll
+48260000 - 4826A000  C:\Windows\SYSTEM32\VERSION.dll
+3C6E0000 - 3C6FD000  C:\Windows\SYSTEM32\MPR.dll
+3EDF0000 - 3EDF7000  C:\Windows\SYSTEM32\SHFOLDER.dll
+36810000 - 3684B000  C:\SIMULIA\CAE\2017\win_b64\code\bin\CATSysMultiThreading.dll
+3AE10000 - 3AE20000  C:\SIMULIA\CAE\2017\win_b64\code\bin\CATSysAllocator.dll
+26C50000 - 26DA6000  C:\SIMULIA\CAE\2017\win_b64\code\bin\JS0BASEILB.dll
+36030000 - 36064000  C:\SIMULIA\CAE\2017\win_b64\code\bin\CATSysTSObjectModeler.dll
+3A9B0000 - 3A9B9000  C:\SIMULIA\CAE\2017\win_b64\code\bin\DSYSysWMIDriver.dll
+2EA10000 - 2EAAC000  C:\SIMULIA\CAE\2017\win_b64\code\bin\DSYSysDlg.dll
+0DBA0000 - 0E105000  C:\Windows\SYSTEM32\mfc110u.dll
+3C740000 - 3C74C000  C:\Windows\SYSTEM32\Secur32.dll
+4E490000 - 4E4CB000  C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0B970000 - 0BA5A000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMASrvBasic.dll
+297B0000 - 297F0000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAAspCommunications.dll
+28900000 - 2894E000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAFeoModules.dll
+008C0000 - 00D15000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAAspSchemaSupport.dll
+26800000 - 26853000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAObjSimObjectsMod.dll
+1E900000 - 1E9BC000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQDMP_Core.dll
+03FC0000 - 04D4C000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMASimInterface.dll
+1E680000 - 1E740000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMASimContainers.dll
+35F30000 - 35F52000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAMsgCommModules.dll
+1F9F0000 - 1FA4E000  C:\SIMULIA\CAE\2017\win_b64\code\bin\libifportMD.dll
+3A070000 - 3A07D000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMABasXmlDocument.dll
+37E50000 - 3832A000  C:\Windows\SYSTEM32\WININET.dll
+47580000 - 47726000  C:\Windows\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.19041.746_none_faeda79b76159a72\gdiplus.dll
+4C790000 - 4C82E000  C:\Windows\SYSTEM32\UxTheme.dll
+05890000 - 059A2000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMASglSimXmlFndLib.dll
+2E9E0000 - 2EA03000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAMsgModules.dll
+35F00000 - 35F26000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMABasXmlParser.dll
+0B8C0000 - 0B96B000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAMtxCoreModule.dll
+2CD90000 - 2CDC3000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAFsmShared.dll
+21040000 - 210A4000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMABlaModule.dll
+37520000 - 37532000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMASimManifestSubcomp.dll
+1E740000 - 1E8F4000  C:\Windows\SYSTEM32\msmpi.dll
+38870000 - 38887000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMASimBulkAPI.dll
+40980000 - 4098A000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMASimBCompress.dll
+26B10000 - 26B36000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMASimPoolManager.dll
+4EF40000 - 4EF7C000  C:\Windows\SYSTEM32\SSPICLI.DLL
+35EE0000 - 35EF4000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMASglSharedLib.dll
+40810000 - 4081B000  C:\SIMULIA\CAE\2017\win_b64\code\bin\SMAFeaBackbone.dll
+FEDF0000 - 003EB000  C:\SIMULIA\CAE\2017\win_b64\code\bin\mkl_core.dll
+FDDD0000 - FEDEB000  C:\SIMULIA\CAE\2017\win_b64\code\bin\mkl_intel_thread.dll
+4E7A0000 - 4E80A000  C:\Windows\SYSTEM32\MSWSOCK.dll
+3C710000 - 3C73A000  C:\Windows\SYSTEM32\NTDSAPI.dll
+4DE80000 - 4DECC000  C:\Windows\SYSTEM32\AUTHZ.dll
+33BC0000 - 33BE0000  C:\SIMULIA\CAE\2017\win_b64\code\bin\CATSysCommunication.dll
+05660000 - 057AE000  C:\SIMULIA\CAE\2017\win_b64\code\bin\libiomp5md.dll
+4E970000 - 4E97C000  C:\Windows\SYSTEM32\CRYPTBASE.DLL
+48EA0000 - 48EAC000  C:\Windows\SYSTEM32\DSPARSE.DLL
+077C0000 - 079EB000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAPyqOdbApiModule.dll
+1FA50000 - 1FAF8000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMAVcoVwrModCom.dll
+34650000 - 3467B000  C:\Windows\SYSTEM32\MSVFW32.dll
+4FDD0000 - 4FE7E000  C:\Windows\System32\shcore.dll
+4D1A0000 - 4D92F000  C:\Windows\SYSTEM32\windows.storage.dll
+4EA80000 - 4EAAC000  C:\Windows\SYSTEM32\Wldp.dll
+4EFC0000 - 4EFE6000  C:\Windows\SYSTEM32\profapi.dll
+05160000 - 05251000  C:\SIMULIA\CAE\2017\win_b64\tools\SMApy\python2.7\lib\site-packages\numpy\core\multiarray.pyd
+05600000 - 0565A000  C:\SIMULIA\CAE\2017\win_b64\tools\SMApy\python2.7\lib\site-packages\numpy\core\umath.pyd
+2D610000 - 2D62B000  C:\SIMULIA\CAE\2017\win_b64\tools\SMApy\python2.7\lib\site-packages\numpy\core\_sort.pyd
+40450000 - 4045E000  C:\SIMULIA\CAE\2017\win_b64\tools\SMApy\python2.7\lib\site-packages\numpy\core\_dotblas.pyd
+FD7B0000 - FDDCD000  C:\SIMULIA\CAE\2017\win_b64\code\bin\mkl_sequential.dll
+25600000 - 2562E000  C:\SIMULIA\CAE\2017\win_b64\tools\SMApy\python2.7\lib\site-packages\numpy\core\scalarmath.pyd
+39C00000 - 39C09000  C:\SIMULIA\CAE\2017\win_b64\tools\SMApy\python2.7\lib\site-packages\numpy\lib\_compiled_base.pyd
+FD690000 - FD7A8000  C:\SIMULIA\CAE\2017\win_b64\tools\SMApy\python2.7\lib\site-packages\numpy\linalg\lapack_lite.pyd
+2AD40000 - 2AD53000  C:\SIMULIA\CAE\2017\win_b64\tools\SMApy\python2.7\lib\site-packages\numpy\fft\fftpack_lite.pyd
+05590000 - 055F7000  C:\SIMULIA\CAE\2017\win_b64\tools\SMApy\python2.7\lib\site-packages\numpy\random\mtrand.pyd
+4E980000 - 4E998000  C:\Windows\SYSTEM32\CRYPTSP.dll
+4E140000 - 4E174000  C:\Windows\system32\rsaenh.dll
+4F1C0000 - 4F1E7000  C:\Windows\System32\bcrypt.dll
+4F3B0000 - 4F430000  C:\Windows\System32\bcryptPrimitives.dll
+1D1A0000 - 1D1BF000  C:\SIMULIA\CAE\2017\win_b64\tools\SMApy\python2.7\DLLs\_ctypes.pyd
+396C0000 - 396C9000  C:\SIMULIA\CAE\2017\win_b64\code\bin\symbolicConstantsCache.pyd
+3B290000 - 3B2A7000  C:\Windows\system32\napinsp.dll
+3AEB0000 - 3AECB000  C:\Windows\system32\pnrpnsp.dll
+3AC10000 - 3AC25000  C:\Windows\system32\wshbth.dll
+4A840000 - 4A85D000  C:\Windows\system32\NLAapi.dll
+4E4D0000 - 4E59B000  C:\Windows\SYSTEM32\DNSAPI.dll
+51190000 - 51198000  C:\Windows\System32\NSI.dll
+3AD40000 - 3AD52000  C:\Windows\System32\winrnr.dll
+4FFC0000 - 500D6000  C:\Windows\System32\MSCTF.dll
+4D9A0000 - 4D9B2000  C:\Windows\SYSTEM32\kernel.appcore.dll
+45910000 - 45A0B000  C:\Windows\SYSTEM32\textinputframework.dll
+4BF90000 - 4C2EE000  C:\Windows\SYSTEM32\CoreUIComponents.dll
+4C2F0000 - 4C3E2000  C:\Windows\SYSTEM32\CoreMessaging.dll
+4DDD0000 - 4DE03000  C:\Windows\SYSTEM32\ntmarta.dll
+4AC30000 - 4AD84000  C:\Windows\SYSTEM32\wintypes.dll
+0BF30000 - 0BF56000  C:\SIMULIA\CAE\2017\win_b64\code\bin\abaqusGuiOld.pyd
+409F0000 - 409FA000  C:\SIMULIA\CAE\2017\win_b64\code\bin\guiInternal.pyd
+3A060000 - 3A06A000  C:\SIMULIA\CAE\2017\win_b64\code\bin\miscUtilsInternal.pyd
+F1B30000 - F1D0F000  C:\SIMULIA\CAE\2017\win_b64\code\bin\fxpc.pyd
+F04A0000 - F0502000  C:\SIMULIA\CAE\2017\win_b64\code\bin\afxCc.pyd
+F03A0000 - F0497000  C:\SIMULIA\CAE\2017\win_b64\code\bin\afxWc.pyd
+F0300000 - F0398000  C:\SIMULIA\CAE\2017\win_b64\code\bin\afxIc.pyd
+39600000 - 3960F000  C:\SIMULIA\CAE\2017\win_b64\code\bin\annGc.pyd
+36800000 - 3680F000  C:\SIMULIA\CAE\2017\win_b64\code\bin\cnvGc.pyd
+367C0000 - 367CF000  C:\SIMULIA\CAE\2017\win_b64\code\bin\gtkGc.pyd
+0B890000 - 0B8BF000  C:\SIMULIA\CAE\2017\win_b64\code\bin\mmgGc.pyd
+361F0000 - 36200000  C:\SIMULIA\CAE\2017\win_b64\code\bin\oslGc.pyd
+34640000 - 34650000  C:\SIMULIA\CAE\2017\win_b64\code\bin\qreGc.pyd
+2A4C0000 - 2A4D1000  C:\SIMULIA\CAE\2017\win_b64\code\bin\visGc.pyd
+050C0000 - 050E9000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ubic.pyd
+34560000 - 34570000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ampGc.pyd
+FD140000 - FD529000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMACinGeomMeshGui.dll
+FB590000 - FC6E5000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMACinAttributesGui.dll
+FB350000 - FB3AE000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMACinAttributesProxies.dll
+0BA60000 - 0BBC4000  C:\SIMULIA\CAE\2017\win_b64\code\bin\ABQSMACcoAttributesGuiCommon.dll
+33E50000 - 33E60000  C:\SIMULIA\CAE\2017\win_b64\code\bin\asmGc.pyd
+33C40000 - 33C4F000  C:\SIMULIA\CAE\2017\win_b64\code\bin\dtmGc.pyd
+333D0000 - 333DF000  C:\SIMULIA\CAE\2017\win_b64\code\bin\edtGc.pyd
+301B0000 - 301C0000  C:\SIMULIA\CAE\2017\win_b64\code\bin\itnGc.pyd
+2C1B0000 - 2C1C0000  C:\SIMULIA\CAE\2017\win_b64\code\bin\jobGc.pyd
+2BE40000 - 2BE50000  C:\SIMULIA\CAE\2017\win_b64\code\bin\lbiGc.pyd
+29620000 - 29630000  C:\SIMULIA\CAE\2017\win_b64\code\bin\mgnGc.pyd
+28D10000 - 28D20000  C:\SIMULIA\CAE\2017\win_b64\code\bin\optGc.pyd
+28D00000 - 28D10000  C:\SIMULIA\CAE\2017\win_b64\code\bin\prpGc.pyd
+28630000 - 28640000  C:\SIMULIA\CAE\2017\win_b64\code\bin\prtGc.pyd
+28620000 - 2862F000  C:\SIMULIA\CAE\2017\win_b64\code\bin\repGc.pyd
+276B0000 - 276BF000  C:\SIMULIA\CAE\2017\win_b64\code\bin\rgnGc.pyd
+26BD0000 - 26BE0000  C:\SIMULIA\CAE\2017\win_b64\code\bin\skmGc.pyd
+26B00000 - 26B10000  C:\SIMULIA\CAE\2017\win_b64\code\bin\sktGc.pyd
+26AF0000 - 26B00000  C:\SIMULIA\CAE\2017\win_b64\code\bin\sptGc.pyd
+267F0000 - 26800000  C:\SIMULIA\CAE\2017\win_b64\code\bin\stpGc.pyd
+80000000 - 8007A000  C:\SIMULIA\CAE\2017\win_b64\tools\SMApy\python2.7\DLLs\_hashlib.pyd
+AF360000 - AF485000  C:\SIMULIA\CAE\2017\win_b64\tools\SMApy\python2.7\DLLs\_ssl.pyd
+773A0000 - 773A7000  C:\SIMULIA\CAE\2017\win_b64\tools\SMApy\python2.7\lib\site-packages\win32\_win32sysloader.pyd
+77370000 - 77395000  C:\SIMULIA\CAE\2017\win_b64\code\bin\pywintypes27.dll
+76680000 - 76752000  C:\Windows\SYSTEM32\MSVCR100.dll
+743F0000 - 74472000  C:\SIMULIA\CAE\2017\win_b64\code\bin\pythoncom27.dll
+41580000 - 4176D000  C:\Windows\SYSTEM32\urlmon.dll
+421D0000 - 42480000  C:\Windows\SYSTEM32\iertutil.dll
+773F0000 - 77413000  C:\SIMULIA\CAE\2017\win_b64\tools\SMApy\python2.7\lib\site-packages\win32\win32api.pyd
+39860000 - 39A44000  C:\Windows\System32\dbghelp.dll
+EF890000 - EFA18000  C:\SIMULIA\CAE\2017\win_b64\code\bin\dbghelp.dll
+3F410000 - 3F45B000  C:\SIMULIA\CAE\2017\win_b64\code\bin\symsrv.dll
+</Modules>

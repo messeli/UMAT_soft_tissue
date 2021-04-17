@@ -1,0 +1,193 @@
+# Save by mehme on 2021_02_03-14.43.10; build 2017 2016_09_28-00.54.59 126836
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=10.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(0.5, 1.0))
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='Part-1', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Part-1'].BaseSolidExtrude(depth=2.0, sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].Material(name='Material-1')
+mdb.models['Model-1'].materials['Material-1'].UserMaterial(mechanicalConstants=
+    (1.0, 1.0, 1.0, 1.0))
+mdb.models['Model-1'].materials['Material-1'].Depvar(n=10)
+mdb.models['Model-1'].HomogeneousSolidSection(material='Material-1', name=
+    'Section-1', thickness=None)
+mdb.models['Model-1'].parts['Part-1'].Set(cells=
+    mdb.models['Model-1'].parts['Part-1'].cells.getSequenceFromMask(('[#1 ]', 
+    ), ), name='Set-body')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-body'], sectionName=
+    'Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Part-1-1', 
+    part=mdb.models['Model-1'].parts['Part-1'])
+mdb.models['Model-1'].StaticStep(maxNumInc=10000, minInc=1e-10, name='Step-1', 
+    nlgeom=ON, previous='Initial')
+mdb.models['Model-1'].rootAssembly.Surface(name='Surf-far', side1Faces=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].faces.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['Model-1'].Pressure(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, field='', magnitude=0.01, name='Load-1', region=
+    mdb.models['Model-1'].rootAssembly.surfaces['Surf-far'])
+mdb.models['Model-1'].loads['Load-1'].setValues(magnitude=-0.01)
+# Save by mehme on 2021_02_03-14.59.35; build 2017 2016_09_28-00.54.59 126836
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-1'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.5)
+mdb.models['Model-1'].parts['Part-1'].generateMesh()
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='Job-1', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine=
+    'C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\MyUMAT\\myUMAT.for'
+    , waitHours=0, waitMinutes=0)
+# Save by mehme on 2021_02_03-15.01.53; build 2017 2016_09_28-00.54.59 126836
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['Job-1']._Message(ERROR, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\MyUMAT\\myUMAT.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_ABORTED, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\MyUMAT\\myUMAT.for', 
+    'jobName': 'Job-1'})
+# Save by mehme on 2021_02_03-22.45.46; build 2017 2016_09_28-00.54.59 126836
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['Job-1']._Message(ERROR, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\MyUMAT\\myUMAT.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_ABORTED, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\MyUMAT\\myUMAT.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(ERROR, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\MyUMAT\\myUMAT.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_ABORTED, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\MyUMAT\\myUMAT.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['Job-1']._Message(ERROR, {
+    'message': 'Problem during linking - Abaqus/Standard User Subroutines.   This error may be due to a mismatch in the Abaqus user subroutine arguments.   These arguments sometimes change from release to release, so user subroutines   used with a previous release of Abaqus may need to be adjusted.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_ABORTED, {
+    'message': 'Problem during linking - Abaqus/Standard User Subroutines.   This error may be due to a mismatch in the Abaqus user subroutine arguments.   These arguments sometimes change from release to release, so user subroutines   used with a previous release of Abaqus may need to be adjusted.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1'].setValues(userSubroutine=
+    'C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\MyUMAT\\KMYUMAT.for')
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['Job-1']._Message(ERROR, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\MyUMAT\\KMYUMAT.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_ABORTED, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\MyUMAT\\KMYUMAT.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['Job-1']._Message(ERROR, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\MyUMAT\\KMYUMAT.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_ABORTED, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\MyUMAT\\KMYUMAT.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['Job-1']._Message(ERROR, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\MyUMAT\\KMYUMAT.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_ABORTED, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\MyUMAT\\KMYUMAT.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['Job-1']._Message(ERROR, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\MyUMAT\\KMYUMAT.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_ABORTED, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\MyUMAT\\KMYUMAT.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1'].setValues(userSubroutine=
+    'C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\Abaqus-myUMAT-deneme\\UMAT_Combined.for')
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['Job-1']._Message(ERROR, {
+    'message': 'Problem during linking - Abaqus/Standard User Subroutines.   This error may be due to a mismatch in the Abaqus user subroutine arguments.   These arguments sometimes change from release to release, so user subroutines   used with a previous release of Abaqus may need to be adjusted.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_ABORTED, {
+    'message': 'Problem during linking - Abaqus/Standard User Subroutines.   This error may be due to a mismatch in the Abaqus user subroutine arguments.   These arguments sometimes change from release to release, so user subroutines   used with a previous release of Abaqus may need to be adjusted.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['Job-1']._Message(ERROR, {
+    'message': 'Problem during linking - Abaqus/Standard User Subroutines.   This error may be due to a mismatch in the Abaqus user subroutine arguments.   These arguments sometimes change from release to release, so user subroutines   used with a previous release of Abaqus may need to be adjusted.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_ABORTED, {
+    'message': 'Problem during linking - Abaqus/Standard User Subroutines.   This error may be due to a mismatch in the Abaqus user subroutine arguments.   These arguments sometimes change from release to release, so user subroutines   used with a previous release of Abaqus may need to be adjusted.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF, datacheckJob=True)
+mdb.jobs['Job-1']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-0G62BBI', 'handle': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': '8 elements have been defined with zero hour glass stiffness. You may use *hourglass stiffness or change the element type. The elements have been identified in element set ErrElemZeroHourGlassStiffness.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\Abaqus-myUMAT-deneme\\Job-1.odb', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error.', 
+    'jobName': 'Job-1'})
+# Save by mehme on 2021_02_04-16.55.14; build 2017 2016_09_28-00.54.59 126836
