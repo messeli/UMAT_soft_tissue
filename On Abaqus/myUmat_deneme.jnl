@@ -191,3 +191,63 @@ mdb.jobs['Job-1']._Message(JOB_ABORTED, {
     'message': 'Analysis Input File Processor exited with an error.', 
     'jobName': 'Job-1'})
 # Save by mehme on 2021_02_04-16.55.14; build 2017 2016_09_28-00.54.59 126836
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-1'].setValues(userSubroutine=
+    'C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\Repos\\messeli\\UMAT_soft_tissue\\UMAT_Combined.for')
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(ERROR, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\Repos\\messeli\\UMAT_soft_tissue\\UMAT_Combined.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_ABORTED, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\Repos\\messeli\\UMAT_soft_tissue\\UMAT_Combined.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(ERROR, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\Repos\\messeli\\UMAT_soft_tissue\\UMAT_Combined.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_ABORTED, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\Repos\\messeli\\UMAT_soft_tissue\\UMAT_Combined.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(ERROR, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\Repos\\messeli\\UMAT_soft_tissue\\UMAT_Combined.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_ABORTED, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\Repos\\messeli\\UMAT_soft_tissue\\UMAT_Combined.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(ERROR, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\Repos\\messeli\\UMAT_soft_tissue\\UMAT_Combined.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_ABORTED, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\Repos\\messeli\\UMAT_soft_tissue\\UMAT_Combined.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(ERROR, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\Repos\\messeli\\UMAT_soft_tissue\\UMAT_Combined.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_ABORTED, {
+    'message': 'Problem during compilation - C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\Repos\\messeli\\UMAT_soft_tissue\\UMAT_Combined.for', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.models['Model-1'].rootAssembly.Set(faces=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].faces.getSequenceFromMask(
+    ('[#20 ]', ), ), name='Set-1')
+mdb.models['Model-1'].EncastreBC(createStepName='Step-1', localCsys=None, name=
+    'BC-1', region=mdb.models['Model-1'].rootAssembly.sets['Set-1'])
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+# Save by mehme on 2021_08_14-16.05.02; build 2017 2016_09_28-00.54.59 126836

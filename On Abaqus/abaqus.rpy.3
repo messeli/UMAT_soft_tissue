@@ -1,0 +1,112 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2017 replay file
+# Internal Version: 2016_09_28-00.54.59 126836
+# Run by mehme on Sat Aug 14 14:15:42 2021
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=188.671890258789, 
+    height=109.349540710449)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('myUmat_deneme.cae')
+#: The model database "C:\Users\mehme\Google_Drive\Soft_Tissue_FEM\FEM_ABAQUS\UMAT\Repos\messeli\UMAT_soft_tissue\On Abaqus\myUmat_deneme.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-1'].parts['Part-1']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, optimizationTasks=OFF, 
+    geometricRestrictions=OFF, stopConditions=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, interactions=ON, constraints=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF, 
+    adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=ON, geometricRestrictions=ON, stopConditions=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+mdb.jobs['Job-1'].setValues(
+    userSubroutine='C:\\Users\\mehme\\Google_Drive\\Soft_Tissue_FEM\\FEM_ABAQUS\\UMAT\\Repos\\messeli\\UMAT_soft_tissue\\UMAT_Combined.for')
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+#: The job input file "Job-1.inp" has been submitted for analysis.
+#: Error in job Job-1: Problem during compilation - C:\Users\mehme\Google_Drive\Soft_Tissue_FEM\FEM_ABAQUS\UMAT\Repos\messeli\UMAT_soft_tissue\UMAT_Combined.for
+#: Job Job-1 aborted due to errors.
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+#: The job input file "Job-1.inp" has been submitted for analysis.
+#: Error in job Job-1: Problem during compilation - C:\Users\mehme\Google_Drive\Soft_Tissue_FEM\FEM_ABAQUS\UMAT\Repos\messeli\UMAT_soft_tissue\UMAT_Combined.for
+#: Job Job-1 aborted due to errors.
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+#: The job input file "Job-1.inp" has been submitted for analysis.
+#: Error in job Job-1: Problem during compilation - C:\Users\mehme\Google_Drive\Soft_Tissue_FEM\FEM_ABAQUS\UMAT\Repos\messeli\UMAT_soft_tissue\UMAT_Combined.for
+#: Job Job-1 aborted due to errors.
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+#: The job input file "Job-1.inp" has been submitted for analysis.
+#: Error in job Job-1: Problem during compilation - C:\Users\mehme\Google_Drive\Soft_Tissue_FEM\FEM_ABAQUS\UMAT\Repos\messeli\UMAT_soft_tissue\UMAT_Combined.for
+#: Job Job-1 aborted due to errors.
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+#: The job input file "Job-1.inp" has been submitted for analysis.
+#: Error in job Job-1: Problem during compilation - C:\Users\mehme\Google_Drive\Soft_Tissue_FEM\FEM_ABAQUS\UMAT\Repos\messeli\UMAT_soft_tissue\UMAT_Combined.for
+#: Job Job-1 aborted due to errors.
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+#: The job input file "Job-1.inp" has been submitted for analysis.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3.06071, 
+    farPlane=6.90805, width=4.99378, height=2.75144, viewOffsetX=0.0545059, 
+    viewOffsetY=0.216137)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.97025, 
+    farPlane=6.99968, width=4.8462, height=2.67013, cameraPosition=(3.22902, 
+    3.32199, 3.83215), cameraUpVector=(-0.600989, 0.57735, -0.552702), 
+    cameraTarget=(0.233461, 0.444259, 1.07728), viewOffsetX=0.0528951, 
+    viewOffsetY=0.20975)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['Job-1'].kill()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, interactions=ON, constraints=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON, 
+    interactions=OFF, constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF, loads=ON, 
+    bcs=ON, predefinedFields=ON, connectors=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.93472, 
+    farPlane=7.0005, width=4.78824, height=2.63819, cameraPosition=(3.21753, 
+    3.32199, 3.81324), cameraTarget=(0.22197, 0.444259, 1.05837), 
+    viewOffsetX=0.0522624, viewOffsetY=0.207241)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3.15793, 
+    farPlane=7.02195, width=5.15243, height=2.83885, cameraPosition=(3.80872, 
+    3.32199, -1.30361), cameraUpVector=(-0.693919, 0.57735, 0.430283), 
+    cameraTarget=(0.349967, 0.444259, 0.841089), viewOffsetX=0.0562374, 
+    viewOffsetY=0.223004)

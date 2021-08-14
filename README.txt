@@ -1,1 +1,0 @@
-SEE THE README OF .\Abaqus-myUMAT-deneme folder. 

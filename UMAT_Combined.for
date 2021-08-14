@@ -33,8 +33,9 @@ C       INTEGER NTENS,NDI,NSTATV,NPROPS,MATERIALNUMBER
      3 NDI,NSHR,NTENS,NSTATV,PROPS,NPROPS,COORDS,DROT,PNEWDT,
      4 CELENT,DFGRD0,DFGRD1,NOEL,NPT,LAYER,KSPT,KSTEP,KINC)
 
+        !implicit real*8 (A-H,O-Z)
         INCLUDE 'ABA_PARAM.INC'
-        implicit real*8 (A-H,O-Z)
+        
 
         CHARACTER*80 CMNAME
         DIMENSION STRESS(NTENS),STATEV(NSTATV),
@@ -167,8 +168,8 @@ C=======================================================================
       !|4                    XI1B,XI2B,XI3B,XI4B,XI5B) !|Isochoric invar
       !|5                    CAUSTR,TIME,PROPS) !|Cauchy stress SIGMA
 
+        !implicit real*8 (A-H,O-Z)
         INCLUDE 'ABA_PARAM.INC'
-        implicit real*8 (A-H,O-Z)
 
 
         INTENT(IN) :: DFGRD, XA
@@ -532,6 +533,7 @@ C=======================================================================
       !|:Matrix to Voigt vector
       !|...11 22 33 12 13 23 <SEE doc Abaq Convensions
 C         INCLUDE 'ABA_PARAM.INC'
+		DOUBLE PRECISION XMAT, VEC, NSHR
         INTENT(in) :: XMAT, NSHR
         INTENT(out):: VEC
         DIMENSION XMAT(3,3), vec(6)
@@ -553,6 +555,7 @@ C         INCLUDE 'ABA_PARAM.INC'
         !| SEE 1996 Miehe eq2.17 for delta(F) (defGrad pertubation calc)
         !| SEE 2014 Nolan eqA.3  > ~same as above w/o g-mericTensor.  
         INCLUDE 'ABA_PARAM.INC'
+        DOUBLE PRECISION DF, eps,DYAD1,DYAD2
         INTENT (in) :: DFGRD, eps, m, n !|Curr DefG, incr, idx to pert
         INTENT (out):: DF !|Perturbed defGrad increment is output. 
         DIMENSION dyad1(3,3),dyad2(3,3),DFGRD(3,3),DF(3,3)  ! ,DFp1(3,3)
@@ -560,20 +563,21 @@ C         INCLUDE 'ABA_PARAM.INC'
         !| Zero the dyad matrices
         DO i = 1,3
           DO j = 1,3
-            dyad1(i,j) = zero
-            dyad2(i,j) = zero
+            dyad1(i,j) = 0.D0
+            dyad2(i,j) = 0.D0
           END DO
         END DO
         !| Place the 1's in the correct location        
-        dyad1(m,n) = 1.0;
-        dyad2(n,m) = 1.0;
+        dyad1(m,n) = 1.D0;
+        dyad2(n,m) = 1.D0;
 
         DF = 0.5D0 *( MATMUL(dyad1,DFGRD) + MATMUL(dyad2,DFGRD) ) * eps
       END SUBROUTINE KMYdelF  
 
 
       SUBROUTINE KMYPRINTER(TENS, m, n) !|Print out a matrix of any size.
-        INCLUDE 'ABA_PARAM.INC'
+        !INCLUDE 'ABA_PARAM.INC'
+        DOUBLE PRECISION TENS
         INTENT(in):: TENS, m, n      
         DIMENSION tens(m,n)
         
@@ -591,15 +595,15 @@ C         INCLUDE 'ABA_PARAM.INC'
       END SUBROUTINE KMYPRINTER      
 
       
-      PURE FUNCTION KMYACOSH(X) RESULTS(Y)
+      PURE FUNCTION KMYACOSH(X) RESULT(Y)
       !SUBROUTINE KMYACOSH(X,Y)   
       !| INVERSE HYPERBOLIC FUNCTIONS,SEE EXPLANATION by Arnold Desitter
       !| ...computer-programming-forum.com/49-fortran/7ebc82829d81d040.htm
-        INCLUDE 'ABA_PARAM.INC'
-C         DOUBLE PRECISION :: X,Y
+        DOUBLE PRECISION :: X,Y
         ! DOUBLE PRECISION ATANH, ASINH
-        INTENT(IN) :: X
-        INTENT(OUT):: Y
+        
+        INTENT(IN) :: X 
+        !INTENT(OUT) :: Y ! result(Y) above defines this automatically
         ! ATANH(X)=LOG((X+1.)/(-X+1.))/2
         ! ASINH(X)=LOG(X+SQRT(X**2+1.))
         Y = LOG(X+SQRT((X-1.D0)*(X+1.D0))) !|sO says dss problem fr x~=0
@@ -608,11 +612,12 @@ C         DOUBLE PRECISION :: X,Y
       END FUNCTION
 
 
-      PURE FUNCTION KMYINVER(A) RESULTS(AI)
+      PURE FUNCTION KMYINVER(A) RESULT(AI)
       !SUBROUTINE KMYINVER(A,AI)
         INCLUDE 'ABA_PARAM.INC'
+        DOUBLE PRECISION A,AI
         INTENT(IN)  :: A
-        INTENT(OUT) :: AI
+        ! INTENT(OUT) :: AI !Results(AI) definition above automatically defines this.
         DIMENSION :: A(3,3),AI(3,3)
         !| TAKE THE INVERSE OF A 3x3 MATRIX
         ! Calculate the inverse determinant of the matrix
@@ -635,24 +640,28 @@ C         DOUBLE PRECISION :: X,Y
       END FUNCTION
 
 
-      PURE FUNCTION KMYTRACE(A) RESULTS(TR_A)
+      PURE FUNCTION KMYTRACE(A) RESULT(TR_A)
       !SUBROUTINE KMYTRACE(A,TR_A)
         INCLUDE 'ABA_PARAM.INC'
+        DOUBLE PRECISION A,TR_A
+      	INTENT(IN) :: A
         DIMENSION :: A(3,3)
-        OUTVAL = A(1,1) + A(2,2) + A(3,3)
+        TR_A = A(1,1) + A(2,2) + A(3,3)
       !END SUBROUTINE KMYTRACE
       END FUNCTION
 
 
-      PURE FUNCTION KMYDEVCUR(CMAT,AB) RESULTS(DEV_AB)
+      FUNCTION KMYDEVCUR(CMAT,AB) RESULT(DEV_AB)
       !SUBROUTINE KMYDEVCUR(CMAT,AB,DEV_AB) !|B for Bar.
         !| DEVCUR : Deviatoric operator in current config, not reference
         !| AB is the isochoric one, B:bar
         !| A is the full one
         INCLUDE 'ABA_PARAM.INC'
+        DOUBLE PRECISION CMAT,AB,DEV_AB,TR_,CMATI
+        INTENT(IN) :: CMAT, AB
         DIMENSION :: CMAT(3,3),CMATI(3,3),AB(3,3),DEV_AB(3,3)
-        TR_ = KMYTRACE(MATMUL(TRANSPOSE(AB),CMAT))
-        CMATI = KMYINVER(CMAT)
+        TR_ = KMYTRACE(MATMUL(TRANSPOSE(AB),CMAT)) !pure gave error here ??
+        CMATI = KMYINVER(CMAT) !pure func def gave error here ??
         DEV_AB = AB -1/3*TR_*CMATI !|Deviatoric part 
       !END SUBROUTINE KMYDEVCUR
       END FUNCTION
@@ -675,7 +684,7 @@ C       end subroutine kdotprod
 C       SUBROUTINE KMTMS (M, N, L, A, KA, B, KB, C, KC) !|MATMUL available
 C       !|:Multiply two real matrices 
 C         INCLUDE 'ABA_PARAM.INC'  
-C         !| Because IMPLICITE NONE is not used here, 
+C         !| Because IMPLICIT NONE is not used here, 
 C         !| ...I,J,K,L,M,N (and what starts with them are integers;
 C         !| ...and others are real (single precision)
 C         INTENT(in) :: M, N, L, A, KA, B, KB, KC
@@ -745,7 +754,11 @@ c
       SUBROUTINE KMYpolarDecomp(G,S,R)
 c
 c declarations
-      INCLUDE 'ABA_PARAM.INC'
+      !INCLUDE 'ABA_PARAM.INC'
+      !IMPLICIT REAL*8 (A-H,O-Z)
+      DOUBLE PRECISION G,R,S,COG,XP,ADP,XPBI
+      DOUBLE PRECISION EPS,G3,G1SQ,G1,G2SQ,G2,H1,H2,X,Y,DEN,RES1,RES2
+      DOUBLE PRECISION DX,DY,BETA1,BETA2
       dimension G(3,3),R(3,3),S(3,3),COG(3,3),XP(3,3),ADP(3,3),
      1 XPBI(3,3)
 c

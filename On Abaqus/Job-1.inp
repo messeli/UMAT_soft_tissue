@@ -63,6 +63,10 @@
 *Instance, name=Part-1-1, part=Part-1
 *End Instance
 **  
+*Nset, nset=Set-1, instance=Part-1-1
+ 13, 14, 15, 28, 29, 30
+*Elset, elset=Set-1, instance=Part-1-1
+ 7, 8
 *Elset, elset=_Surf-far_S3, internal, instance=Part-1-1
  1, 2
 *Surface, type=ELEMENT, name=Surf-far
@@ -83,6 +87,12 @@ _Surf-far_S3, S3
 *Step, name=Step-1, nlgeom=YES, inc=10000
 *Static
 1., 1., 1e-10, 1.
+** 
+** BOUNDARY CONDITIONS
+** 
+** Name: BC-1 Type: Symmetry/Antisymmetry/Encastre
+*Boundary
+Set-1, ENCASTRE
 ** 
 ** LOADS
 ** 
